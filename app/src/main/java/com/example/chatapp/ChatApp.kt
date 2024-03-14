@@ -16,7 +16,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.rememberNavController
 import com.example.chatapp.activities.NotificationActivity
 import com.example.chatapp.navigation.NavGraph
-import com.example.chatapp.notification.NotificationUtil
+
 
 @Composable
 fun ChatApp() {
@@ -24,30 +24,45 @@ fun ChatApp() {
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
-//        val navController = rememberNavController()
-//        NavGraph(navController)
-//        val context = LocalContext.current
-//        val i= Intent(context,NotificationActivity::class.java)
-//        val pi= PendingIntent.getActivity(context,0, i,PendingIntent.FLAG_IMMUTABLE)
-//        val notificationUtil=NotificationUtil(context)
-//        Column(
-//            modifier = Modifier.fillMaxSize(),
-//            verticalArrangement = Arrangement.Center,
-//            horizontalAlignment = Alignment.CenterHorizontally
-//        ) {
-//
-//            Button(onClick = { NotificationUtil(context = context).startNotification(title="Hello","world", pendingIntent = pi) }) {
-//                Text(text = "Trigger")
-//
-//            }
-//            Button(onClick = {  notificationUtil.updateNotification(notificationId = 0, pendingIntent = pi ) }) {
-//                Text(text = "Update")
-//
-//            }
-//            Button(onClick = { notificationUtil.cancelNotification(0)}) {
-//                Text(text = "Cancel")
-//
-//            }
-//        }
+        val navController = rememberNavController()
+        NavGraph(navController)
+        val context = LocalContext.current
+        val chatApplication = context.applicationContext as ChatApplication
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+
+            Button(onClick = {
+                chatApplication.triggerNotification(
+                    "Notification Title",
+                    "Notification Content",
+                    "channelId",
+                    0, // Notification ID
+                    NotificationActivity::class.java,
+                    R.drawable.ic_notification,
+                    PendingIntent.FLAG_MUTABLE
+                )
+            }) {
+                Text(text = "Trigger")
+
+            }
+            Button(onClick = {
+                chatApplication.updateNotification(
+                    channelId ="channelId",
+                    notificationId = 0,
+                    targetActivity = NotificationActivity::class.java,
+                    pendingIntentFlag= PendingIntent.FLAG_IMMUTABLE
+                )
+            }) {
+                Text(text = "Update")
+
+            }
+            Button(onClick = { chatApplication.cancelNotification(0)}) {
+                Text(text = "Cancel")
+
+            }
+        }
     }
 }
