@@ -1,8 +1,7 @@
-package com.example.chatapp.Navigation
+package com.example.chatapp.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
 
 
 @Composable
