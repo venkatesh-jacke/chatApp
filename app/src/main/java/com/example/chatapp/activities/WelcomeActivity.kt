@@ -8,13 +8,12 @@ import com.example.chatapp.ChatApp
 import com.example.chatapp.utils.splashScreen
 import com.example.chatapp.viewModels.MainViewModel
 
-class MainActivity : ComponentActivity() {
+class WelcomeActivity : ComponentActivity() {
 
     private val mainViewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        splashScreen(this, mainViewModel)
         setContent {
 
                 ChatApp()

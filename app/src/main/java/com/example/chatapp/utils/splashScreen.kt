@@ -2,6 +2,7 @@ package com.example.chatapp.utils
 
 import android.animation.ObjectAnimator
 import android.app.Activity
+import android.util.Log
 import android.view.View
 import android.view.animation.OvershootInterpolator
 
@@ -11,7 +12,9 @@ import com.example.chatapp.viewModels.MainViewModel
 
 
 fun splashScreen(activity: Activity, mainViewModel: MainViewModel) {
+    val TAG="SplashScreen"
     //Splash Screen Logic
+    Log.d(TAG,"Splash-Screen initiated")
     activity.installSplashScreen().apply{
         setKeepOnScreenCondition{
             !mainViewModel.isReady.value
@@ -33,4 +36,5 @@ fun splashScreen(activity: Activity, mainViewModel: MainViewModel) {
         }
 
     }
+    Log.d(TAG,"Splash-Screen Completed")
 }

@@ -23,6 +23,7 @@ import com.example.chatapp.R
 import com.example.chatapp.composables.GradientButton
 import com.example.chatapp.composables.MyTextField
 import com.example.chatapp.composables.PasswordTextField
+import com.example.chatapp.ui.theme.ChatAppTheme
 import com.example.chatapp.utils.Constants
 
 @Composable
@@ -32,7 +33,6 @@ fun SignUpScreen() {
         color = Color.White,
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
     ) {
         Column(
             modifier = Modifier
@@ -61,5 +61,8 @@ fun SignUpScreen() {
 @Composable
 @Preview(showSystemUi = true)
 fun PreviewSignUpScreen() {
-    SignUpScreen()
+
+        SignUpScreen()
+
+
 }

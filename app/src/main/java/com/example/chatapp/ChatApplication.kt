@@ -1,13 +1,31 @@
 package com.example.chatapp
 
 import android.app.Application
+import android.util.Log
 import com.example.chatapp.notification.NotificationUtil
+import com.google.firebase.messaging.FirebaseMessaging
+
 
 class ChatApplication : Application() {
-
+    private val TAG: String= ChatApplication::class.java.name
     private lateinit var notificationUtil: NotificationUtil
     override fun onCreate() {
         super.onCreate()
+        FirebaseMessaging.getInstance().isAutoInitEnabled=true;
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val token = task.result
+                    Log.d(TAG, "FCM Token: $token")
+                    // Token retrieval was successful, you can save the token to your server or perform other operations.
+                } else {
+                    val exception = task.exception
+                    if (exception != null) {
+                        Log.e(TAG, "Error getting FCM token: " + exception.message)
+                        // Token retrieval failed, handle the error appropriately.
+                    }
+                }
+            }
         notificationUtil = NotificationUtil.getInstance(this)
         notificationUtil.registerNotificationChannel(
             "channelId",

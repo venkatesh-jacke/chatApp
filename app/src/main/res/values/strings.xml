@@ -4,11 +4,13 @@
     <string name="welcome">Welcome</string>
     <string name="user_name">User Name</string>
     <string name="password">Password</string>
+    <string name="channelId">channelId</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="show_password">Show password</string>
     <string name="hide_password">Hide password</string>
     <string name="title_activity_notification">NotificationActivity</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

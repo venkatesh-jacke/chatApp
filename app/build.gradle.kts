@@ -80,6 +80,7 @@ dependencies {
     //Firebase
     implementation ("com.google.firebase:firebase-auth-ktx:21.1.0")
     implementation ("com.google.android.gms:play-services-auth:20.4.1")
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
 
     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0")
     implementation ("androidx.lifecycle:lifecycle-runtime-compose:2.6.0")

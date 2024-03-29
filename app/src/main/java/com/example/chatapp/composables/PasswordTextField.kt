@@ -25,6 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import com.example.chatapp.ui.theme.LightBlue50
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,7 +45,8 @@ fun PasswordTextField(label: String,icon:Painter) {
         colors = TextFieldDefaults.outlinedTextFieldColors(
             focusedBorderColor = Color.Red, // Placeholder for focused color
             unfocusedBorderColor = Color.Gray,
-            cursorColor = Color.Black
+            cursorColor = Color.Black,
+            containerColor = LightBlue50.copy(.2f)
         ),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
         onValueChange = { newPassword -> password = newPassword },
