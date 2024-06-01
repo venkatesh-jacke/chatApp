@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.chatapp.ui.theme.DodgerBlue
+import com.example.chatapp.ui.theme.Purple50
 
 @Composable
 fun GradientButton(
@@ -46,12 +47,12 @@ fun GradientButton(
                 .height(buttonHeight)
                 .border(2.dp, color = Color.Black, shape = RoundedCornerShape(buttonHeight / 2f))
                 .background(
-                    brush = Brush.horizontalGradient(listOf(DodgerBlue, Color.Black)),
+                    brush = Brush.horizontalGradient(listOf(Purple50, Color.White)),
                     shape = RoundedCornerShape(buttonHeight / 2f)
                 ),
             contentAlignment = Alignment.Center,
         ) {
-            Text(text = text, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+            Text(text = text,fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Color.Black)
         }
     }
 }

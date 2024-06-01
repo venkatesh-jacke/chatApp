@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -32,6 +33,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.chatapp.composables.MyTextField
 import com.example.chatapp.R
 import com.example.chatapp.composables.GradientButton
@@ -40,37 +43,25 @@ import com.example.chatapp.utils.Constants
 
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     val TAG = "LoginScreen"
-    Surface(
-        color = Color.White,
-        modifier = Modifier
-            .fillMaxSize()
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                text = stringResource(id = R.string.welcome_again),
-                textAlign = TextAlign.Justify,
-                style = MaterialTheme.typography.titleLarge
-            )
-            Spacer(modifier = Modifier.height(30.dp))
-            MyTextField(
-                label = stringResource(id = R.string.user_name),
-                icon = painterResource(id = R.drawable.ic_person)
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            PasswordTextField(label = "PASSWORD", icon = painterResource(id = R.drawable.lock))
-            Spacer(modifier = Modifier.height(16.dp))
-            GradientButton(
-                text = stringResource(id = R.string.login),
-                onClick = { Log.d(TAG,"Button clicked") })
+
+    Surface (modifier = Modifier.fillMaxSize()){
+        Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(text = "Login Screen", fontSize = 50.sp)
+            Button(onClick = { navController.navigate(Screens.HomeScreen.route) }) {
+                Text(text = "Go to Home")
+            }
+            Button(onClick = { navController.navigate(Screens.SignUpScreen.route) }) {
+                Text(text = "Go to SignUp")
+            }
+            Button(onClick = {  navController.navigate(Screens.ForgotScreen.route)}) {
+                Text(text = "Go to ForgotPage")
+            }
         }
     }
+
+
 }
 
 
@@ -78,5 +69,5 @@ fun LoginScreen() {
 @Preview(showSystemUi = true)
 fun PreviewLoginScreen() {
 
-    LoginScreen()
+    LoginScreen(rememberNavController())
 }

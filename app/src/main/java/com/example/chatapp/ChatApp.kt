@@ -24,8 +24,7 @@ fun ChatApp() {
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
-        val navController = rememberNavController()
-        NavGraph(navController)
+        NavGraph()
         val context = LocalContext.current
         val chatApplication = context.applicationContext as ChatApplication
 //        Column(
