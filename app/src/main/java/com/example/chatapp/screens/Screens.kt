@@ -9,6 +9,4 @@ sealed class Screens (val route:String) {
     object HomeScreen : Screens("HomeScreen")
     object SettingScreen : Screens("SettingScreen")
 
-    object AuthRoute:Screens("AuthRoute")
-    object HomeRoute:Screens("HomeRoute")
 }

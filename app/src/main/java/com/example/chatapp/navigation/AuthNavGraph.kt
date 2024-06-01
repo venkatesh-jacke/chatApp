@@ -11,7 +11,7 @@ import com.example.chatapp.screens.SignUpScreen
 
 fun NavGraphBuilder.authNavGraph(navController: NavController) {
 
-    navigation(startDestination = Screens.LoginScreen.route, route = Screens.AuthRoute.route){
+    navigation(startDestination = Screens.LoginScreen.route, route = Routes.AuthRoute.route){
         composable(route=Screens.LoginScreen.route){
             LoginScreen(navController = navController)
         }

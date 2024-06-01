@@ -11,12 +11,10 @@ import com.example.chatapp.screens.Screens
 import com.example.chatapp.screens.SignUpScreen
 
 
-
 @Composable
 fun NavGraph() {
-    val navController= rememberNavController()
-    NavHost(navController = navController, startDestination = Screens.AuthRoute.route){
-
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = Routes.AuthRoute.route) {
         authNavGraph(navController)
         homeNavGraph(navController)
     }

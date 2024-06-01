@@ -14,7 +14,7 @@ import com.example.chatapp.screens.SettingScreen
 fun NavGraphBuilder.homeNavGraph(navController: NavController){
 
 
-    navigation(startDestination = Screens.HomeScreen.route, route = Screens.HomeRoute.route){
+    navigation(startDestination = Screens.HomeScreen.route, route = Routes.HomeRoute.route){
         composable(route=Screens.HomeScreen.route){
             HomeScreen(navController = navController)
         }
