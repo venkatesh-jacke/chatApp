@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.chatapp.R
-import com.example.chatapp.composables.GradientButton
 import com.example.chatapp.composables.MyTextField
 import com.example.chatapp.composables.PasswordTextField
 import com.example.chatapp.ui.theme.ChatAppTheme
